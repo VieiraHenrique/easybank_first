@@ -17,6 +17,7 @@
     --grey-extra-light: hsl(0, 0%, 97%);
     --white: #fff;
     
+    --gradient: linear-gradient(to right,var(--lime-green),var(--bright-cyan));
 }
 
 /***** BASIC RESET *******/
@@ -39,7 +40,7 @@ body {
     font-size: 1.6rem;
     font-family: var(--font-one), sans-serif;
     overflow-x: hidden;
-    
+    background: red;
 }
 
 ul {
@@ -65,6 +66,10 @@ img {
 
 #toggle {
     display: none;
+}
+
+.nav {
+    background: var(--white);
 }
 
 .nav .container {
@@ -162,16 +167,22 @@ img {
         color: var(--grey);
     }
 
+/********* TO DO : CREATE GRADIENT BOTTOM BORDER ********/
+    .nav__menu ul li a:hover {
+        border-bottom: 2px solid var(--gradient);
+    }
+
     .nav__cta {
         display: block;
     }
 
     .nav__cta a {
         color: var(--white);
-        background: linear-gradient(to right,var(--lime-green),var(--bright-cyan));
+        background: var(--gradient);
         padding: 1rem 2.2rem;
         border-radius: 50rem;
     }
+
 
 }
 
