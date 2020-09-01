@@ -1,0 +1,180 @@
+/**** FONT IMPORT *****/
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;300;600&display=swap');
+
+/***** VARIABLES ********/
+
+:root {
+    --font-one: 'Public Sans', sans-serif;
+
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+
+    --black: #232323;
+    --grey: hsl(233, 8%, 62%);
+    --grey-light: hsl(220, 16%, 96%);
+    --grey-extra-light: hsl(0, 0%, 97%);
+    --white: #fff;
+    
+}
+
+/***** BASIC RESET *******/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 62.5%; /* Establish 1rem = 10px */
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-one), sans-serif;
+    overflow-x: hidden;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/************ MOBILE STYLES ****************/
+
+#toggle {
+    display: none;
+}
+
+.nav .container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu label {
+    position: relative;
+    bottom: .4rem;
+    z-index: 100;
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__menu label span,
+.nav__menu label span::before,
+.nav__menu label span::after {
+    position: relative;
+    display: block;
+    width: 3.5rem;
+    height: .3rem;
+    background: var(--grey);
+}
+
+.nav__menu label span::before,
+.nav__menu label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav__menu label span::before {
+    bottom: .8rem;
+}
+.nav__menu label span::after {
+    top: .8rem;
+}
+
+.nav__menu ul {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -60vw;
+    height: 100vh;
+    width: 60vw;
+    background: var(--grey-extra-light);
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right .5s ease;
+}
+
+.nav__menu ul li a {
+    color: var(--grey);
+}
+
+.nav__cta {
+    display: none;
+}
+
+#toggle:checked ~ ul {
+    right: 0;
+}
+
+
+
+/************ LARGE TABLETS and LAPTOPS STYLES ****************/
+@media screen and (min-width:960px) {
+
+
+    .nav__menu label {
+        display: none;
+    }
+
+    .nav__menu ul {
+        all: unset;
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav__menu ul li a {
+        color: var(--grey);
+    }
+
+    .nav__cta {
+        display: block;
+    }
+
+    .nav__cta a {
+        color: var(--white);
+        background: linear-gradient(to right,var(--lime-green),var(--bright-cyan));
+        padding: 1rem 2.2rem;
+        border-radius: 50rem;
+    }
+
+}
+
+
+
+
