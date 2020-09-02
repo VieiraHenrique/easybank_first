@@ -40,7 +40,6 @@ body {
     font-size: 1.6rem;
     font-family: var(--font-one), sans-serif;
     overflow-x: hidden;
-    background: red;
 }
 
 ul {
@@ -62,6 +61,20 @@ img {
     padding: 0 2rem;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    color: var(--white);
+    background: var(--gradient);
+    padding: 1rem 2.2rem;
+    border-radius: 50rem;
+}
+
 /************ MOBILE STYLES ****************/
 
 #toggle {
@@ -70,9 +83,12 @@ img {
 
 .nav {
     background: var(--white);
+    position: relative;
+    z-index: 1000;
 }
 
 .nav .container {
+    padding: 0 2rem;
     position: sticky;
     top: 0;
     left: 0;
@@ -146,11 +162,110 @@ img {
     right: 0;
 }
 
+.hero-img-bg-small {
+    position: absolute;
+    z-index: 100;
+    top: -5rem;
+    width: 100vw;
+    overflow: hidden;
+}
 
+#img-bg2 {
+    width: 80vw;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.hero-img-bg-big {
+    display: none;
+}
+
+.hero__text {
+    padding-top: 30rem;
+    grid-column: 1/13;
+    text-align: center;
+}
+
+.hero__text h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+}
+
+.hero__text p {
+    color: var(--grey);
+    line-height: 2;
+}
+
+.hero__text a {
+    margin-top: 3rem;
+}
+
+.about {
+    background: var(--grey-light);
+    margin-top: 5rem;
+    padding: 5rem 0;
+}
+
+.about h2 {
+    margin-top: 4rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about p {
+    line-height: 2;
+    color: var(--grey);
+    text-align: center;
+}
+
+.cards {
+    margin-top: 5rem;
+}
+
+.cards__item {
+    grid-column: 1/13;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.cards__item img {
+    width: 8rem;
+}
+
+.articles h2 {
+    margin-top: 8rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.articles__wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+/************************************************************/
+/************************************************************/
+/************************************************************/
 /************ LARGE TABLETS and LAPTOPS STYLES ****************/
 @media screen and (min-width:960px) {
 
+    .hero-img-bg-small {
+        display: none;
+    }
 
     .nav__menu label {
         display: none;
@@ -176,13 +291,60 @@ img {
         display: block;
     }
 
-    .nav__cta a {
-        color: var(--white);
-        background: var(--gradient);
-        padding: 1rem 2.2rem;
-        border-radius: 50rem;
+   .hero__text {
+       padding-top: 15rem;
+       text-align: left;
+       align-self: center;
+       grid-column: 1/6;
+       margin-bottom: 15rem;
+   }
+
+   .hero-img-bg-big {
+       display: block;
+       top: 0;
+       right: 0;
+       position: absolute;
+       z-index: 1;
+   }
+
+   #img-bg1-b {
+       top: -20rem;
+       right: -30rem;
+       width: 70vw;
+       position: absolute;
+   }
+   #img-bg2-b {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40vw;
+   }
+
+   .about {
+       background: var(--grey-light);
+       padding: 10rem 0;
+   }
+
+
+   .about h2 {
+        margin-top: 3rem;
+        text-align: left;
     }
 
+    .about p {
+        text-align: left;
+    }
+
+
+    .cards__item {
+        grid-column: span 3;
+
+    }
+
+
+    .articles h2 {
+        text-align: left;
+    }
 
 }
 
